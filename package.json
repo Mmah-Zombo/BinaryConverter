@@ -4,7 +4,9 @@
   "description": "This is a binary converter built for a university group project.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js",
+    "build": "npx tailwindcss -i ./public/css/app.css -o ./public/css/style.css",
+    "watch": "npx tailwindcss -i ./public/css/app.css -o ./public/css/style.css --watch"
   },
   "keywords": [],
   "author": "",
