@@ -2,7 +2,15 @@
 module.exports = {
   content: ["./views/**/*.{html,js,ejs}", "./src/**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "space-cadet": "#171738",
+        "lavender-blush": "#FFEEF2",
+        "pale-purple": "#FFE4F3",
+        "federal-blue": "#2E1760",
+        "zaffre": "#3423A6"
+      }
+    },
   },
   plugins: [],
 }
