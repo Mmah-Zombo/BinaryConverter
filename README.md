@@ -5,6 +5,7 @@ This is a binary converter built for a university group project.
 ## Starting the App
 
 Open your terminal and run:
+
 ``` bash
 npm install
 ```
@@ -30,6 +31,7 @@ npm start
 This command will only work if you have nodemon installed for the app.
 
 ## Team
+
 M'mah Zomb
 Josephine Magona
 Patrick Kawa
