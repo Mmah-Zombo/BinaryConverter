@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('components/header'); -%>
-<body class="bg-gradient-to-b from-federal-blue to-federal-blue-light">
+<body class="bg-gradient-to-b from-federal-blue to-federal-blue-light hover:cursor-default">
     <div class="font-sans text-gray-900 antialiased ">
         <div class="min-h-screen h-screen">
             <%- include('components/navigationBar'); -%> 
@@ -15,8 +15,47 @@
             </div>
 
             <!-- Converter -->
-            <div>
-                
+            <div class="w-[90%] mx-auto lg:w-full h-fit flex items-center justify-center mt-10">
+                <div class="bg-federal-blue w-[32rem] h-[33rem] rounded-2xl shadow-2xl p-4 flex flex-col justify-center">
+                    <div id="input" class="w-full h-20 px-4 text-xl bg-pale-purple-light shadow-inner rounded hover:cursor-default flex items-center justify-start">
+                    ENTER BINARY NUMBER
+                    </div>
+
+                    <div id="input" class="w-full h-20 px-4 mt-4 text-xl bg-pale-purple-light shadow-inner rounded hover:cursor-default flex items-center justify-start">
+                        OUPUT
+                    </div>
+
+                    <div class="w-full h-fit grid grid-cols-4 gap-4 mt-7">
+                        <div class="col-span-1 bg-button-blue h-20 rounded-md shadow-2xl flex items-center justify-center text-lavender-blush hover:shadow-none hover:bg-lavender-blush hover:text-button-blue">
+                            0
+                        </div>
+                        
+                        <div class="col-span-1 bg-button-blue h-20 rounded-md shadow-2xl flex items-center justify-center text-lavender-blush hover:shadow-none hover:bg-lavender-blush hover:text-button-blue">
+                            1
+                        </div>
+
+                        <div class="col-span-2 bg-button-blue h-20 rounded-md shadow-2xl flex items-center justify-center text-lavender-blush hover:shadow-none hover:bg-lavender-blush hover:text-button-blue">
+                            CONVERT TO BINARY
+                        </div>
+
+                        <div class="col-span-2 bg-button-blue h-20 rounded-md shadow-2xl flex items-center justify-center text-lavender-blush hover:shadow-none hover:bg-lavender-blush hover:text-button-blue">
+                            DELETE
+                        </div>
+
+                        <div class="col-span-2 bg-button-blue h-20 rounded-md shadow-2xl flex items-center justify-center text-lavender-blush hover:shadow-none hover:bg-lavender-blush hover:text-button-blue">
+                            CLEAR
+                        </div>
+                        
+                        <div class="col-span-2 bg-button-blue h-20 rounded-md shadow-2xl flex items-center justify-center text-lavender-blush hover:shadow-none hover:bg-lavender-blush hover:text-button-blue">
+                            CONVERT TO HEXADECIMAL
+                        </div>
+
+                        <div class="col-span-2 bg-button-blue h-20 rounded-md shadow-2xl flex items-center justify-center text-lavender-blush hover:shadow-none hover:bg-lavender-blush hover:text-button-blue">
+                            CONVERT TO OCTAL
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>
