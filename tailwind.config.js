@@ -8,6 +8,7 @@ module.exports = {
         "lavender-blush": "#FFEEF2",
         "pale-purple": "#FFE4F3",
         "federal-blue": "#2E1760",
+        "federal-blue-light": "#5F2FC6",
         "zaffre": "#3423A6",
         "space-light": "#41419E",
         "space-dark": "#171738"
