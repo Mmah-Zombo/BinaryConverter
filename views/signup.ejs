@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('components/header'); -%>
+<body>
+    <div class="font-sans text-gray-900 antialiased">
+        <div class="min-h-screen h-screen flex items-center bg-gray-50">
+            <div class="md:w-1/4 w-1/5 h-full bg-space-light md:mr-10">
+            </div>
+            <div class="md:w-3/4 w-4/5 sm:max-w-md mt-6 px-6 py-4 overflow-hidden sm:rounded-lg">
+
+                <form method="POST" action="/signup">
+        
+                    <div>
+                        <label class="block font-medium text-sm text-gray-700" for="name">Fullname</label>
+                        <input id="name" class="px-4 border border-gray-300 rounded-md shadow-sm block mt-1 h-14 w-full focus:border-space-light focus:border-[0.1rem] focus:ring-0 focus:outline-none" type="text" placeholder="fullname" required autofocus autocomplete="name" />
+                    </div>
+        
+                    <div class="mt-4">
+                       <label class="block font-medium text-sm text-gray-700" for="email">Email</label>
+                        <input id="email" class="px-4 border border-gray-300 rounded-md shadow-sm block mt-1 h-14 w-full focus:border-space-light focus:border-[0.1rem] focus:ring-0 focus:outline-none" type="email" placeholder="email" required autocomplete="email" />
+                    </div>
+        
+                    <div class="mt-4">
+                        <label for="password" class="block font-medium text-sm text-gray-700">Password</label>
+                        <input id="password" class="px-4 border border-gray-300 rounded-md shadow-sm block mt-1 h-14 w-full focus:border-space-light focus:border-[0.1rem] focus:ring-0 focus:outline-none" type="password" name="password" placeholder="***********" required autocomplete="new-password" />
+                    </div>
+        
+                    <div class="mt-4">
+                        <label for="password_confirmation" class="block font-medium text-sm text-gray-700">Confirm Password</label>
+                        <input id="password_confirmation" class="px-4 border border-gray-300 rounded-md shadow-sm block mt-1 h-14 w-full focus:border-space-light focus:border-[0.1rem] focus:ring-0 focus:outline-none" type="password" name="password_confirmation" placeholder="***********" required autocomplete="new-password" />
+                    </div>
+        
+                    <div class="flex items-center justify-end mt-6">
+                        <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
+                            Already registered?
+                        </a>
+        
+                        <button type="submit" class="ml-4 bg-space-light text-white inline-flex items-center px-4 py-2 border border-transparent rounded-md font-semibold text-xs uppercase tracking-widest hover:bg-zaffre focus:bg-zaffre hover:text-lavender-blush active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">
+                            Sign Up
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
