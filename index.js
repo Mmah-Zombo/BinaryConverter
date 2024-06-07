@@ -13,6 +13,7 @@ const mongoose = require('mongoose');
 const signupView = require('./controllers/registerView');
 const loginView = require('./controllers/loginView');
 const appView = require('./controllers/appView');
+const aboutView = require('./controllers/aboutView');
 
 // Mongodb Connection
 mongoose.connect('mongodb://localhost:27017/BitConvertPro');
@@ -43,6 +44,8 @@ app.get('/signup', signupView);
 app.get('/login', loginView);
 
 app.get('/bit-convert-pro', appView);
+
+app.get('/about', aboutView);
 
 app.listen(4000, () => {
     console.log('App started at http://localhost:4000');

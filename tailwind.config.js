@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         "space-cadet": "#171738",
+        "cadet-purple": "#41419E",
         "lavender-blush": "#FFEEF2",
         "pale-purple": "#FFE4F3",
         "pale-purple-light": "#EFDEE7",
@@ -14,7 +15,10 @@ module.exports = {
         "zaffre": "#3423A6",
         "space-light": "#41419E",
         "space-dark": "#171738"
-      }
+      },
+      backgroundImage: {
+        'custom-radial': 'radial-gradient(circle, #171738, #41419E, #171738)',
+      },
     },
   },
   plugins: [],
