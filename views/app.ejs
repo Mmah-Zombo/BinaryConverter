@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('components/header'); -%>
-<body class="bg-gradient-to-b from-federal-blue to-federal-blue-light hover:cursor-default">
-    <div class="font-sans text-gray-900 antialiased ">
-        <div class="min-h-screen h-screen">
+<body class="relative bg-gradient-to-b from-federal-blue to-federal-blue-light hover:cursor-default">
+    <div class="h-fit font-sans text-gray-900 antialiased">
+        <div class="md:h-screen pb-40 md:pb-0">
             <%- include('components/navigationBar'); -%> 
 
             <div class="absolute bottom-1/3 left-8 animate-pulse z-20">
@@ -33,7 +33,7 @@
             </div>
 
             <!-- Converter -->
-            <div class="relative w-[90%] mx-auto lg:w-full h-fit flex items-center justify-center mt-10 z-50">
+            <div class="relative w-[90%] mx-auto lg:w-full h-fit flex items-center justify-center mt-2 md:mt-10 z-40">
                 <div class="bg-federal-blue w-[32rem] h-[33rem] rounded-2xl shadow-2xl p-4 flex flex-col justify-center">
                     <div id="input" class="w-full max-w-[32rem] h-20 px-4 text-xl bg-pale-purple-light shadow-inner rounded hover:cursor-default flex items-center justify-start overflow-x-scroll">
                     ENTER BINARY NUMBER
@@ -78,6 +78,7 @@
         </div>
     </div>
 
+    <script src="/scripts/responsive.js"></script>
     <script src="/scripts/digits.js"></script>
     <script src="/scripts/conversions.js"></script>
 </body>
