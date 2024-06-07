@@ -6,16 +6,34 @@
         <div class="min-h-screen h-screen">
             <%- include('components/navigationBar'); -%> 
 
-            <div class="absolute bottom-1/3 ml-8 animate-pulse">
+            <div class="absolute bottom-1/3 left-8 animate-pulse z-20">
                 <svg width="101" height="192" viewBox="0 0 101 192" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10.6471 8.84211L13.3684 0L16.6165 8.84211L24.7368 12L16.6165 14.3459L13.3684 24L10.6471 14.3459L2 12L10.6471 8.84211Z" fill="white" fill-opacity="0.78"/>
                     <path d="M86.6471 79.8421L89.3684 71L92.6165 79.8421L100.737 83L92.6165 85.3459L89.3684 95L86.6471 85.3459L78 83L86.6471 79.8421Z" fill="white" fill-opacity="0.78"/>
                     <path d="M8.64706 176.842L11.3684 168L14.6165 176.842L22.7368 180L14.6165 182.346L11.3684 192L8.64706 182.346L0 180L8.64706 176.842Z" fill="white" fill-opacity="0.78"/>
-                    </svg>
+                </svg>
+            </div>
+
+            <div class="absolute top-1/4 right-8 animate-pulse z-20">
+                <svg width="108" height="143" viewBox="0 0 108 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50.6471 8.84211L53.3684 0L56.6165 8.84211L64.7368 12L56.6165 14.3459L53.3684 24L50.6471 14.3459L42 12L50.6471 8.84211Z" fill="#FFEEF2" fill-opacity="0.78"/>
+                    <path d="M93.6471 91.8421L96.3684 83L99.6165 91.8421L107.737 95L99.6165 97.3459L96.3684 107L93.6471 97.3459L85 95L93.6471 91.8421Z" fill="#FFEEF2" fill-opacity="0.78"/>
+                    <path d="M8.64706 127.842L11.3684 119L14.6165 127.842L22.7368 131L14.6165 133.346L11.3684 143L8.64706 133.346L0 131L8.64706 127.842Z" fill="#FFEEF2" fill-opacity="0.78"/>
+                </svg>
+                    
+            </div>
+
+
+            <div class="absolute bottom-8 right-8 animate-pulse delay-100 z-20">
+                <svg width="107" height="113" viewBox="0 0 107 113" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M92.6471 8.84211L95.3684 0L98.6165 8.84211L106.737 12L98.6165 14.3459L95.3684 24L92.6471 14.3459L84 12L92.6471 8.84211Z" fill="#FFEEF2" fill-opacity="0.78"/>
+                    <path d="M8.64706 97.8421L11.3684 89L14.6165 97.8421L22.7368 101L14.6165 103.346L11.3684 113L8.64706 103.346L0 101L8.64706 97.8421Z" fill="#FFEEF2" fill-opacity="0.78"/>
+                    <path d="M92.6471 97.8421L95.3684 89L98.6165 97.8421L106.737 101L98.6165 103.346L95.3684 113L92.6471 103.346L84 101L92.6471 97.8421Z" fill="#FFEEF2" fill-opacity="0.78"/>
+                </svg>
             </div>
 
             <!-- Converter -->
-            <div class="w-[90%] mx-auto lg:w-full h-fit flex items-center justify-center mt-10">
+            <div class="relative w-[90%] mx-auto lg:w-full h-fit flex items-center justify-center mt-10 z-50">
                 <div class="bg-federal-blue w-[32rem] h-[33rem] rounded-2xl shadow-2xl p-4 flex flex-col justify-center">
                     <div id="input" class="w-full max-w-[32rem] h-20 px-4 text-xl bg-pale-purple-light shadow-inner rounded hover:cursor-default flex items-center justify-start overflow-x-scroll">
                     ENTER BINARY NUMBER
