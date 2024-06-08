@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('components/header'); -%>
-<body class="relative bg-custom-radial hover:cursor-default">
+
+<body class="relative bg-gradient-to-b from-federal-blue to-federal-blue-light md:bg-custom-radial hover:cursor-default">
     <div class="h-fit font-sans text-gray-900 antialiased">
-        <div class="h-screen">
+        <div class="h-screen pb-40 md:pb-0">
             <header class="relative mt-6 z-30">
                 <div class="pl-4 mx-auto max-w-7xl sm:pl-6 lg:pl-8 w-screen">
                     <!-- lg+ -->
@@ -88,7 +89,7 @@
                 </svg>
             </div>
 
-            <div class="absolute top-0 animate-pulse delay-100 z-20">
+            <div class="hidden md:block md:absolute top-0 animate-pulse delay-100 z-20">
                 <svg width="1220" height="832" viewBox="0 0 1220 832" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1097.65 501.842L1100.37 493L1103.62 501.842L1111.74 505L1103.62 507.346L1100.37 517L1097.65 507.346L1089 505L1097.65 501.842Z" fill="#FFEEF2" fill-opacity="0.78"/>
                     <path d="M1205.65 792.842L1208.37 784L1211.62 792.842L1219.74 796L1211.62 798.346L1208.37 808L1205.65 798.346L1197 796L1205.65 792.842Z" fill="#FFEEF2" fill-opacity="0.78"/>
@@ -111,6 +112,10 @@
                     
             </div>
 
+            <div class="relative w-full h-4/6 flex justify-center items-center mt-8 z-30">
+                <h1 id="typewriter" class="text-8xl font-bold text-pale-purple"></h1>
+            </div>
+
             <div class="fixed h-28 bottom-8 w-full flex items-center justify-center z-30">
                 <a href="/bit-convert-pro" class="w-96 h-16 rounded-md text-pale-purple hover:bg-[#5F2FC6] flex items-center justify-center text-3xl font-bold bg-gradient-to-r from-[#472394] via-[#2E1760] to-[#5F2FC6]">
                     START THE APP
@@ -121,5 +126,6 @@
     </div>
 
     <script src="/scripts/responsive.js"></script>
+    <script src="/scripts/text-animation.js"></script>
 </body>
 </html>
