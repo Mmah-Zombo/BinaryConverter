@@ -16,6 +16,7 @@ const loginView = require('./controllers/loginView');
 const appView = require('./controllers/appView');
 const aboutView = require('./controllers/aboutView');
 const registerUser = require('./controllers/registerUser');
+const loginUser = require('./controllers/loginUser');
 
 // Middleware Functions
 const sessionSetter = require('./controllers/middlewares/sessionSetter');
@@ -64,6 +65,7 @@ app.get('/bit-convert-pro', appView);
 app.get('/about', aboutView);
 
 app.post('/auth.signup', registerUser);
+app.post('/auth.login', loginUser);
 
 app.listen(4000, () => {
     console.log('App started at http://localhost:4000');
