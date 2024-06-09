@@ -8,12 +8,19 @@ const fileupload = require('express-fileupload');
 const flash = require('connect-flash');
 const path = require('path');
 const mongoose = require('mongoose');
+const session = require('express-session');
 
 // Import the controllers
 const signupView = require('./controllers/registerView');
 const loginView = require('./controllers/loginView');
 const appView = require('./controllers/appView');
 const aboutView = require('./controllers/aboutView');
+const registerUser = require('./controllers/registerUser');
+
+// Middleware Functions
+const sessionSetter = require('./controllers/middlewares/sessionSetter');
+const AuthUser = require('./controllers/middlewares/Auth');
+const redirectIfNotLoggedIn = require('./controllers/middlewares/redirectIfNotLoggedIn');
 
 // Mongodb Connection
 mongoose.connect('mongodb://localhost:27017/BitConvertPro');
@@ -33,7 +40,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(fileupload());
 
+app.use(session({
+    secret: 'binary me'
+}));
+
 app.use(flash());
+
+global.loggedIn = null;
+global.authUser = null;
+
+app.use('*', sessionSetter, AuthUser);
 
 // Application routes
 app.get('/', (req, res) => {
@@ -46,6 +62,8 @@ app.get('/login', loginView);
 app.get('/bit-convert-pro', appView);
 
 app.get('/about', aboutView);
+
+app.post('/auth.signup', registerUser);
 
 app.listen(4000, () => {
     console.log('App started at http://localhost:4000');
