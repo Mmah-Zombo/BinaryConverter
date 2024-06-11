@@ -20,6 +20,7 @@ const storeConversion = require('./controllers/storeConversion');
 const historyView = require('./controllers/historyView');
 const logoutUser = require('./controllers/logoutUser');
 const deleteHistory = require('./controllers/deleteHistory');
+const deleteUser = require('./controllers/deleteUser');
 
 // Middleware Functions
 const sessionSetter = require('./controllers/middlewares/sessionSetter');
@@ -77,6 +78,7 @@ app.post('/auth.signup', registerUser);
 app.post('/auth.login', loginUser);
 app.post('/store', redirectIfNotLoggedIn, storeConversion);
 app.get('/delete/:id', redirectIfNotLoggedIn, deleteHistory);
+app.get('/delete/user/:id', redirectIfNotLoggedIn, deleteUser);
 
 app.listen(4000, () => {
     console.log('App started at http://localhost:4000');
