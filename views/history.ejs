@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('components/header'); -%>
-
-<body class="relative bg-gradient-to-br from-federal-blue to-federal-blue-light md:bg-custom-radial hover:cursor-default">
+<body class="relative bg-federal-blue-light hover:cursor-default">
     <div class="h-fit font-sans text-gray-900 antialiased">
-        <div class="h-screen pb-40 md:pb-0">
-            <header class="relative mt-6 z-40">
+        <div class="md:h-screen pb-40 md:pb-0">
+            <header class="mt-6">
                 <div class="pl-4 mx-auto max-w-7xl sm:pl-6 lg:pl-8 w-screen">
                     <!-- lg+ -->
                     <nav class="flex items-center justify-between h-20 lg:h-28">
@@ -22,19 +21,19 @@
                         </button>
             
                         <div class="hidden md:flex md:items-center md:space-x-10 bg-federal-blue h-16 lg:h-20 px-4 sm:px-6 lg:px-8 rounded-l-3xl border-2 border-pale-purple border-r-0">
-                            <a href="#" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70  py-1 border-b border-pale-purple"> Home </a>
+                            <a href="/" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70"> Home </a>
             
                             <a href="/about" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70"> About </a>
             
                             <a href="#" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70"> Doc </a>
             
-                            <a href="/bit-convert-pro" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70"> Converter </a>
+                            <a href="/bit-convert-pro" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">Converter</a>
             
                             <% if(loggedIn) {%>
-                                <a href="/history" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">History</a>
+                                <a href="#" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70 py-1 border-b border-pale-purple">History</a>
                                 <a href="/logout" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">Logout</a>
                                 <a href="/delete/user" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">Delete User</a>
-                                <p title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">Username: Useremail</p>
+                                <p title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70"><%= current_user.fullname %> : <%= current_user.email %></p>
                 
                             <% } %>
                             <% if(!loggedIn) {%>
@@ -53,24 +52,30 @@
                         </button>
             
                         <nav class="flex flex-col items-center mt-10 space-y-2">
-                            <a href="#" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70  py-1 border-b border-pale-purple"> Home </a>
+                            <a href="/" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70"> Home </a>
             
                             <a href="/about" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70"> About </a>
             
                             <a href="#" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70"> Doc </a>
             
-                            <a href="/bit-convert-pro" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70"> Converter </a>
+                            <a href="/bit-convert-pro" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70 py-1 border-b border-pale-purple"> Converter </a>
             
-                            <a href="/history" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">History</a>
-                            
-                            <a href="/login" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70"> Login</a>
-            
-                            <a href="/signup" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70"> SignUp </a>
-                        
+                            <% if(loggedIn) {%>
+                                <a href="#" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70 py-1 border-b border-pale-purple">History</a>
+                                <a href="/logout" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">Logout</a>
+                                <a href="/delete/user" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">Delete User</a>
+                                <p title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70"><%= current_user.fullname %> : <%= current_user.email %></p>
+                
+                            <% } %>
+                            <% if(!loggedIn) {%>
+                                <a href="/login" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70"> Login</a>
+                                <a href="/signup" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70"> SignUp </a>
+                            <% } %>
                         </nav>
                     </nav>
                 </div>
-            </header>            
+            </header>
+            
 
             <div class="absolute bottom-1/3 left-8 animate-pulse z-20">
                 <svg width="101" height="192" viewBox="0 0 101 192" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -98,43 +103,33 @@
                 </svg>
             </div>
 
-            <div class="hidden md:block md:absolute top-0 animate-pulse delay-100 z-20">
-                <svg width="1220" height="832" viewBox="0 0 1220 832" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1097.65 501.842L1100.37 493L1103.62 501.842L1111.74 505L1103.62 507.346L1100.37 517L1097.65 507.346L1089 505L1097.65 501.842Z" fill="#FFEEF2" fill-opacity="0.78"/>
-                    <path d="M1205.65 792.842L1208.37 784L1211.62 792.842L1219.74 796L1211.62 798.346L1208.37 808L1205.65 798.346L1197 796L1205.65 792.842Z" fill="#FFEEF2" fill-opacity="0.78"/>
-                    <path d="M163.243 92.3158L164.263 89L165.481 92.3158L168.526 93.5L165.481 94.3797L164.263 98L163.243 94.3797L160 93.5L163.243 92.3158Z" fill="#FFEEF2" fill-opacity="0.78"/>
-                    <path d="M8.64706 236.842L11.3684 228L14.6165 236.842L22.7368 240L14.6165 242.346L11.3684 252L8.64706 242.346L0 240L8.64706 236.842Z" fill="#FFEEF2" fill-opacity="0.78"/>
-                    <path d="M1143.65 224.842L1146.37 216L1149.62 224.842L1157.74 228L1149.62 230.346L1146.37 240L1143.65 230.346L1135 228L1143.65 224.842Z" fill="#FFEEF2" fill-opacity="0.78"/>
-                    <path d="M509.647 100.842L512.368 92L515.617 100.842L523.737 104L515.617 106.346L512.368 116L509.647 106.346L501 104L509.647 100.842Z" fill="#FFEEF2" fill-opacity="0.78"/>
-                    <path d="M437.464 549.564L438.868 545L440.545 549.564L444.737 551.194L440.545 552.405L438.868 557.389L437.464 552.405L433 551.194L437.464 549.564Z" fill="#FFEEF2" fill-opacity="0.78"/>
-                    <path d="M291.647 48.8421L294.368 40L297.617 48.8421L305.737 52L297.617 54.3459L294.368 64L291.647 54.3459L283 52L291.647 48.8421Z" fill="#FFEEF2" fill-opacity="0.78"/>
-                    <path d="M252.647 673.842L255.368 665L258.617 673.842L266.737 677L258.617 679.346L255.368 689L252.647 679.346L244 677L252.647 673.842Z" fill="#FFEEF2" fill-opacity="0.78"/>
-                    <path d="M966.647 763.842L969.368 755L972.617 763.842L980.737 767L972.617 769.346L969.368 779L966.647 769.346L958 767L966.647 763.842Z" fill="#FFEEF2" fill-opacity="0.78"/>
-                    <path d="M917.183 209.684L918.5 206L920.071 209.684L924 211L920.071 211.977L918.5 216L917.183 211.977L913 211L917.183 209.684Z" fill="#FFEEF2" fill-opacity="0.78"/>
-                    <path d="M248.183 349.421L249.5 345L251.071 349.421L255 351L251.071 352.173L249.5 357L248.183 352.173L244 351L248.183 349.421Z" fill="#FFEEF2" fill-opacity="0.78"/>
-                    <path d="M40.6471 751.842L43.3684 743L46.6165 751.842L54.7368 755L46.6165 757.346L43.3684 767L40.6471 757.346L32 755L40.6471 751.842Z" fill="#FFEEF2" fill-opacity="0.78"/>
-                    <path d="M15.8661 445.684L17 442L18.3534 445.684L21.7369 447L18.3534 447.977L17 452L15.8661 447.977L12.2632 447L15.8661 445.684Z" fill="#FFEEF2" fill-opacity="0.78"/>
-                    <path d="M932.647 8.84211L935.368 0L938.617 8.84211L946.737 12L938.617 14.3459L935.368 24L932.647 14.3459L924 12L932.647 8.84211Z" fill="#FFEEF2" fill-opacity="0.78"/>
-                    <path d="M1205.65 20.8421L1208.37 12L1211.62 20.8421L1219.74 24L1211.62 26.3459L1208.37 36L1205.65 26.3459L1197 24L1205.65 20.8421Z" fill="#FFEEF2" fill-opacity="0.78"/>
-                    <path d="M486.647 816.842L489.368 808L492.617 816.842L500.737 820L492.617 822.346L489.368 832L486.647 822.346L478 820L486.647 816.842Z" fill="#FFEEF2" fill-opacity="0.78"/>
-                    </svg>
-                    
-            </div>
+            <!-- History -->
+            <div class="relative w-[90%] mx-auto lg:w-full h-fit flex items-center justify-center mt-2 md:mt-10 z-40">
+                <% if(successMessage != null && successMessage.length > 0) { %>
+                    <div id="vanish" class="absolute top-8 right-4 bg-green-200 text-green-800 w-80 h-fit rounded p-4"><%= successMessage %></div>
+                <% } %>
 
-            <div class="relative w-full px-4 md:p-0 h-3/6 flex justify-center items-center mt-16 z-30">
-                <h1 id="typewriter" class="text-5xl md:text-8xl text-center font-bold text-pale-purple"></h1>
-            </div>
-
-            <div class="fixed h-28 bottom-8 w-full flex items-center justify-center z-30">
-                <a href="/bit-convert-pro" class="w-96 h-16 rounded-md text-pale-purple hover:bg-[#5F2FC6] flex items-center justify-center text-3xl font-bold shadow-2xl bg-gradient-to-r from-[#472394] via-[#2E1760] to-[#5F2FC6]">
-                    START THE APP
-                </a>
+                <div class="bg-pale-purple w-[32rem] h-fit rounded-2xl shadow-2xl p-4 mb-10 flex flex-col justify-center">
+                    <% if(histories.length != 0) { %>
+                        <% for (var i = histories.length - 1; i >= 0; i--) { %>
+                            <div class="w-full p-2 flex items-center justify-between border-b border-zaffre">
+                                <p><%= histories[i].binary %> </p>
+                                <p><%= histories[i].conversion %> </p>
+                                <a href="/delete/<%= histories[i]._id %>" class="px-4 py-2 bg-red-300 hover:bg-red-600 rounded text-white">X</a>
+                            </div>
+                        <% } %>    
+                    <% }  else { %>
+                        <p>History is empty</p>
+                    <% } %>  
+                </div>
             </div>
 
         </div>
     </div>
 
+    <script src="/scripts/popup.js"></script>
     <script src="/scripts/responsive.js"></script>
-    <script src="/scripts/text-animation.js"></script>
+    <script src="/scripts/digits.js"></script>
+    <script src="/scripts/conversions.js"></script>
 </body>
 </html>

@@ -18,6 +18,9 @@ const aboutView = require('./controllers/aboutView');
 const registerUser = require('./controllers/registerUser');
 const loginUser = require('./controllers/loginUser');
 const storeConversion = require('./controllers/storeConversion');
+const historyView = require('./controllers/historyView');
+const logoutUser = require('./controllers/logoutUser');
+const deleteHistory = require('./controllers/deleteHistory');
 
 // Middleware Functions
 const sessionSetter = require('./controllers/middlewares/sessionSetter');
@@ -64,10 +67,13 @@ app.get('/login', loginView);
 app.get('/bit-convert-pro', appView);
 
 app.get('/about', aboutView);
+app.get('/history', redirectIfNotLoggedIn, historyView);
+app.get('/logout', redirectIfNotLoggedIn, logoutUser);
 
 app.post('/auth.signup', registerUser);
 app.post('/auth.login', loginUser);
-app.post('/store', storeConversion);
+app.post('/store', redirectIfNotLoggedIn, storeConversion);
+app.get('/delete/:id', redirectIfNotLoggedIn, deleteHistory);
 
 app.listen(4000, () => {
     console.log('App started at http://localhost:4000');

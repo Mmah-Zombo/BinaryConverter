@@ -49,7 +49,7 @@ async function toDecimal() {
     }
 }
 
-function toHexadecimal() {
+async function toHexadecimal() {
     if (inputBox.innerText === "ENTER BINARY NUMBER" || inputBox.innerHTML === "PLEASE ENTER A BINARY NUMBER") {
         inputBox.innerHTML = "PLEASE ENTER A BINARY NUMBER";
         setInterval(() => inputBox.innerText = "ENTER BINARY NUMBER", 3000)
@@ -61,12 +61,21 @@ function toHexadecimal() {
         let hexadecimal = decimal.toString(16).toUpperCase();
         
         outputBox.innerHTML = hexadecimal;
+        conversion = "Hexadecimal value: " + hexadecimal;
+        let data = {binary: binary, conversion: conversion};
+        
+        const formData = new FormData();
+        for (const key in data) {
+            formData.append(key, data[key]);
 
+        }
+
+        await addToHistory(formData);
 
     }
 }
 
-function toOctal() {
+async function toOctal() {
     if (inputBox.innerText === "ENTER BINARY NUMBER" || inputBox.innerHTML === "PLEASE ENTER A BINARY NUMBER") {
         inputBox.innerHTML = "PLEASE ENTER A BINARY NUMBER";
         setInterval(() => inputBox.innerText = "ENTER BINARY NUMBER", 3000);
@@ -78,5 +87,15 @@ function toOctal() {
         let octal = decimal.toString(8).toUpperCase();
         
         outputBox.innerHTML = octal;
+        conversion = "Octal value: " + octal;
+        let data = {binary: binary, conversion: conversion};
+        
+        const formData = new FormData();
+        for (const key in data) {
+            formData.append(key, data[key]);
+
+        }
+
+        await addToHistory(formData);
     }
 }
