@@ -1,4 +1,21 @@
-function toDecimal() {
+let conversion = "";
+
+async function addToHistory(fdata) {
+    await fetch("http://localhost:4000/store", {
+        method: "POST",
+        body: fdata,
+        }
+    )
+    .then(res => {
+        return res.json();
+    })
+    .catch(err => {
+        console.log(err);
+    });
+}
+
+
+async function toDecimal() {
     if (inputBox.innerText === "ENTER BINARY NUMBER" || inputBox.innerHTML === "PLEASE ENTER A BINARY NUMBER") {
         inputBox.innerHTML = "PLEASE ENTER A BINARY NUMBER";
         setInterval(() => inputBox.innerText = "ENTER BINARY NUMBER", 3000)
@@ -19,6 +36,16 @@ function toDecimal() {
         }
         
         outputBox.innerHTML = answer;
+        conversion = "Decimal value: " + answer;
+        let data = {binary: binary_number, conversion: conversion};
+        
+        const formData = new FormData();
+        for (const key in data) {
+            formData.append(key, data[key]);
+
+        }
+
+        await addToHistory(formData);
     }
 }
 
