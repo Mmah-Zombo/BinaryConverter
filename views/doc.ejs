@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('components/header'); -%>
+<body class="relative bg-federal-blue-light hover:cursor-default">
+    <div class="h-fit font-sans text-gray-900 antialiased">
+        <div class="mb-10">
+            <header class="mt-6">
+                <div class="pl-4 mx-auto max-w-7xl sm:pl-6 lg:pl-8 w-screen">
+                    <!-- lg+ -->
+                    <nav class="flex items-center justify-between h-20 lg:h-28">
+                        <div class="flex-shrink-0 lg:h-full">
+                            <a href="#" title="" class="flex h-full">
+                                <%- include('components/logo'); -%> 
+                            </a>
+                        </div>
+            
+                        <button id="hamburger" type="button" class="inline-flex p-2 text-white transition-all duration-200 rounded-md md:hidden focus:bg-gray-800 hover:bg-gray-800">
+                            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                            </svg>
+                        </button>
+            
+                        <div class="hidden md:flex md:items-center md:space-x-10 bg-federal-blue h-16 lg:h-20 px-4 sm:px-6 lg:px-8 rounded-l-3xl border-2 border-pale-purple border-r-0">
+                            <a href="/" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70"> Home </a>
+                                        
+                            <a href="#" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70  py-1 border-b border-pale-purple"> Doc </a>
+            
+                            <a href="/bit-convert-pro" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70"> Converter </a>
+            
+                            <% if(loggedIn) {%>
+                                <a href="/history" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">History</a>
+                                <a href="/logout" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">Logout</a>
+                                <a href="/delete/user" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">Delete User</a>
+                                <p title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70"><%= current_user.fullname %> : <%= current_user.email %></p>
+                
+                            <% } %>
+                            <% if(!loggedIn) {%>
+                                <a href="/login" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70"> Login</a>
+                                <a href="/signup" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70"> SignUp </a>
+                            <% } %>
+                        </div>
+                    </nav>
+            
+                    <!-- xs to lg -->
+                    <nav id="mobile-nav" class="h-fit px-4 py-10 w-full text-center bg-black bg-opacity-80 absolute z-50 hidden -ml-4 -top-6">
+                        <button id="close" type="button" class="inline-flex p-2 text-white transition-all duration-200 rounded-md focus:bg-gray-800 hover:bg-gray-800">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+            
+                        <nav class="flex flex-col items-center mt-10 space-y-2">
+                            <a href="/" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70"> Home </a>
+                                        
+                            <a href="#" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70  py-1 border-b border-pale-purple"> Doc </a>
+            
+                            <a href="/bit-convert-pro" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70"> Converter </a>
+            
+                            <% if(loggedIn) {%>
+                                <a href="/history" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">History</a>
+                                <a href="/logout" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">Logout</a>
+                                <a href="/delete/user" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">Delete User</a>
+                                <p title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70"><%= current_user.fullname %> : <%= current_user.email %></p>
+                
+                            <% } %>
+                            <% if(!loggedIn) {%>
+                                <a href="/login" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70"> Login</a>
+                                <a href="/signup" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70"> SignUp </a>
+                            <% } %>
+                        </nav>
+                    </nav>
+                </div>
+            </header>            
+            
+            <div class="w-4/5 h-fit px-0 md:px-8 my-10 mx-auto">
+                <p class="w-full bg-lavender-blush rounded text-2xl font-semibold text-space-cadet p-4">Introduction</p>
+                <p class="my-8 text-xl text-lavender-blush">The BitConvert Pro is a tool designed to help you convert binary numbers to decimal, octal, and hexadecimal values easily and efficiently. Whether you are a student, educator, or professional, this tool can simplify your work with binary data.</p>
+
+                <p class="w-full bg-lavender-blush rounded text-2xl font-semibold text-space-cadet p-4">Source Code Configuration</p>
+                <div class="my-8 text-xl text-lavender-blush">
+                    <p class="mb-4">If you are to run the source code of the application, it is required that you first install <code class="bg-white bg-opacity-25 px-2 py-1 rounded">NodeJS</code> , <code class="bg-white bg-opacity-25 px-2 py-1 rounded">MongoDB</code> , along with <code class="bg-white bg-opacity-25 px-2 py-1 rounded">MongoDB Compass</code> on your PC.</p>
+                    <p>Clone source code from <a href="https://github.com/Mmah-Zombo/BinaryConverter" class="bg-white bg-opacity-25 hover:bg-opacity-35 transform px-2 py-1 rounded">Github</a>. Open the application code in the IDE of your choice. Open your terminal and run:</p>
+                    <div class="w-full md:w-1/2 my-4 px-4 py-2 rounded bg-black h-fit">
+                        npm install
+                    </div>
+                    <p>This command installs all dependencies for the applicaiton. Next get your CSS up and running with this command:</p>
+                    <div class="w-full md:w-1/2 my-4 px-4 py-2 rounded bg-black h-fit">
+                        npm run build
+                    </div>
+                    <p>To update the CSS in your browser, immediately when cahnges are made to the app's style, run this command:</p>
+                    <div class="w-full md:w-1/2 my-4 px-4 py-2 rounded bg-black h-fit">
+                        npm run watch
+                    </div>
+                    <p>Finally run this command to start the server:</p>
+                    <div class="w-full md:w-1/2 my-4 px-4 py-2 rounded bg-black h-fit">
+                        npm start
+                    </div>
+                </div>
+
+                <p class="w-full bg-lavender-blush rounded text-2xl font-semibold text-space-cadet p-4">User Manual</p>
+                <div class="my-8 text-xl text-lavender-blush">
+                    <p class="mb-4">To use the application enter the binary number you want to convert in the input box, by clicking the <span class="bg-white bg-opacity-25 px-2 py-1 rounded">0</span> and <span class="bg-white bg-opacity-25 px-2 py-1 rounded">1</span> buttons on the converter. Then convert it to decimal, octal or hexadimal value by clicking the appropriate button conversion. The <span class="bg-white bg-opacity-25 px-2 py-1 rounded">OUTPUT</span> screen will display the converted value of the binary number entered.</p>
+                    <p class="mb-4">While inputting, data you can <span class="bg-white bg-opacity-25 px-2 py-1 rounded">delete</span> and <span class="bg-white bg-opacity-25 px-2 py-1 rounded">clear</span> digits when you make mistakes by clicking the delete and clear buttons respectively.</p>
+                    <p class="mb-4">You can not enter data using their keyboards, and the input box is not clickable.</p>
+                    <p class="mb-4">The app has a  <span class="bg-white bg-opacity-25 px-2 py-1 rounded">history</span> feature that stores the conversion history of only logged in users. If you already have an account you can login to the applicaiton so that all your conversions can be stored. If you don't have an account you can create one by navigating to the signup page.</p>
+                    <p class="mb-4">You can still use the app without creating an account, but your history will not be recorded.</p>
+                    
+                </div>
+
+                <p class="w-full bg-lavender-blush rounded text-2xl font-semibold text-space-cadet p-4">The Team</p>
+                <div class="my-8 text-xl text-lavender-blush">The application was designed and developed by: M'mah Zombo, Josephine A. Magona, Patirck M. Kawa, Ina Conteh, Mustapha Pabai and Jann Lansana</div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="/scripts/responsive.js"></script>
+</body>
+</html>

@@ -14,7 +14,6 @@ const session = require('express-session');
 const signupView = require('./controllers/registerView');
 const loginView = require('./controllers/loginView');
 const appView = require('./controllers/appView');
-const aboutView = require('./controllers/aboutView');
 const registerUser = require('./controllers/registerUser');
 const loginUser = require('./controllers/loginUser');
 const storeConversion = require('./controllers/storeConversion');
@@ -67,9 +66,12 @@ app.get('/login', loginView);
 
 app.get('/bit-convert-pro', appView);
 
-app.get('/about', aboutView);
 app.get('/history', redirectIfNotLoggedIn, historyView);
 app.get('/logout', redirectIfNotLoggedIn, logoutUser);
+app.get('/docs', (req, res) => {
+    const current_user = authUser;
+    res.render('doc', {current_user});
+})
 
 app.post('/auth.signup', registerUser);
 app.post('/auth.login', loginUser);
