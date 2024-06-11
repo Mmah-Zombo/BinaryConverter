@@ -24,16 +24,16 @@
                 <a href="#" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70 py-1 border-b border-pale-purple">Converter</a>
 
                 <% if(loggedIn) {%>
-                <a href="/history" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">History</a>
-                <a href="/logout" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">Logout</a>
-                <a href="/delete/user" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">Delete User</a>
-                <p title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">Username: Useremail</p>
-
-                <% } %>
-                <% if(!loggedIn) {%>
-                <a href="/login" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70"> Login</a>
-                <a href="/signup" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70"> SignUp </a>
-                <% } %>
+                    <a href="/history" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">History</a>
+                    <a href="/logout" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">Logout</a>
+                    <a href="/delete/user" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70">Delete User</a>
+                    <p title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70"><%= current_user.fullname %> : <%= current_user.email %></p>
+    
+                    <% } %>
+                    <% if(!loggedIn) {%>
+                    <a href="/login" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70"> Login</a>
+                    <a href="/signup" title="" class="text-sm font-medium text-pale-purple transition-all duration-200 lg:text-base hover:text-opacity-70 focus:text-opacity-70"> SignUp </a>
+                    <% } %>
             </div>
         </nav>
 

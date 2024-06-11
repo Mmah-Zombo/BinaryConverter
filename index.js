@@ -58,7 +58,8 @@ app.use('*', sessionSetter, AuthUser);
 
 // Application routes
 app.get('/', (req, res) => {
-    res.render('index');
+    const current_user = authUser;
+    res.render('index', {current_user});
 });
 
 app.get('/signup', signupView);
