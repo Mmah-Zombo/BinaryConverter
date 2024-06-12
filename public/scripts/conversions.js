@@ -14,7 +14,6 @@ async function addToHistory(fdata) {
     });
 }
 
-
 async function toDecimal() {
     if (inputBox.innerText === "ENTER BINARY NUMBER" || inputBox.innerHTML === "PLEASE ENTER A BINARY NUMBER") {
         inputBox.innerHTML = "PLEASE ENTER A BINARY NUMBER";
