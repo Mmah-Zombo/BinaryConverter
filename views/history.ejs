@@ -106,13 +106,16 @@
                     <div id="vanish" class="absolute top-8 right-4 bg-green-200 text-green-800 w-80 h-fit rounded p-4"><%= successMessage %></div>
                 <% } %>
 
-                <div class="bg-pale-purple w-[32rem] h-fit rounded-2xl shadow-2xl p-4 mb-10 flex flex-col justify-center">
+                <div class="bg-pale-purple w-[32rem] md:w-fit h-fit rounded-2xl shadow-2xl p-4 mb-10 flex flex-col justify-center">
                     <% if(histories.length != 0) { %>
                         <% for (var i = histories.length - 1; i >= 0; i--) { %>
-                            <div class="w-full p-2 flex items-center justify-between border-b border-zaffre">
-                                <p><%= histories[i].binary %> </p>
-                                <p><%= histories[i].conversion %> </p>
-                                <a href="/delete/<%= histories[i]._id %>" class="px-4 py-2 bg-red-300 hover:bg-red-600 rounded text-white">X</a>
+                            <div class="w-full p-2  border-b border-zaffre">
+                                <p class="font-semibold max-w-[20rem] overflow-auto md:max-w-fit mb-2"><%= histories[i].binary %> </p>
+                                <div class="flex items-center justify-between">
+                                    <p class="mr-8"><%= histories[i].conversion %> </p>
+                                    <p class="text-sm mr-8"><%= histories[i].datePosted.toDateString() %>, <%= histories[i].datePosted.toLocaleTimeString() %></p>
+                                    <a href="/delete/<%= histories[i]._id %>" class="px-4 py-2 bg-red-300 hover:bg-red-600 rounded text-white">X</a>
+                                </div>
                             </div>
                         <% } %>    
                     <% }  else { %>
@@ -126,7 +129,6 @@
 
     <script src="/scripts/popup.js"></script>
     <script src="/scripts/responsive.js"></script>
-    <script src="/scripts/digits.js"></script>
     <script src="/scripts/conversions.js"></script>
 </body>
 </html>
