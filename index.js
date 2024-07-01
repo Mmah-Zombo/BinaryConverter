@@ -81,6 +81,6 @@ app.post('/store', redirectIfNotLoggedIn, storeConversion);
 app.get('/delete/:id', redirectIfNotLoggedIn, deleteHistory);
 app.get('/delete/user/:id', redirectIfNotLoggedIn, deleteUser);
 
-app.listen(4000, () => {
-    console.log('App started at http://localhost:4000');
+app.listen(10000, () => {
+    console.log('App started at http://localhost:10000');
 });
