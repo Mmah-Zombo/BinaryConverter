@@ -670,6 +670,10 @@ video {
   margin-bottom: 2.5rem;
 }
 
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -680,6 +684,10 @@ video {
 
 .ml-4 {
   margin-left: 1rem;
+}
+
+.mr-8 {
+  margin-right: 2rem;
 }
 
 .mt-1 {
@@ -716,18 +724,6 @@ video {
 
 .mt-\[2px\] {
   margin-top: 2px;
-}
-
-.mr-4 {
-  margin-right: 1rem;
-}
-
-.mr-8 {
-  margin-right: 2rem;
-}
-
-.mb-2 {
-  margin-bottom: 0.5rem;
 }
 
 .block {
@@ -856,28 +852,12 @@ video {
   max-width: 80rem;
 }
 
-.max-w-\[32rem\] {
-  max-width: 32rem;
-}
-
-.max-w-52 {
-  max-width: 13rem;
-}
-
-.max-w-40 {
-  max-width: 10rem;
-}
-
-.max-w-\[30rem\] {
-  max-width: 30rem;
-}
-
-.max-w-\[10rem\] {
-  max-width: 10rem;
-}
-
 .max-w-\[20rem\] {
   max-width: 20rem;
+}
+
+.max-w-\[32rem\] {
+  max-width: 32rem;
 }
 
 .flex-shrink-0 {
@@ -964,16 +944,8 @@ video {
   overflow: auto;
 }
 
-.overflow-hidden {
-  overflow: hidden;
-}
-
 .overflow-x-scroll {
   overflow-x: scroll;
-}
-
-.text-wrap {
-  text-wrap: wrap;
 }
 
 .rounded {
@@ -1528,18 +1500,6 @@ video {
 
   .md\:w-3\/4 {
     width: 75%;
-  }
-
-  .md\:w-\[35rem\] {
-    width: 35rem;
-  }
-
-  .md\:w-\[40rem\] {
-    width: 40rem;
-  }
-
-  .md\:w-\[50rem\] {
-    width: 50rem;
   }
 
   .md\:w-fit {

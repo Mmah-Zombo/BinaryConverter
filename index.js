@@ -28,7 +28,8 @@ const AuthUser = require('./controllers/middlewares/Auth');
 const redirectIfNotLoggedIn = require('./controllers/middlewares/redirectIfNotLoggedIn');
 
 // Mongodb Connection
-mongoose.connect('mongodb://localhost:27017/BitConvertPro');
+// mongoose.connect('mongodb://localhost:27017/BitConvertPro');
+mongoose.connect('mongodb+srv://NaryZombo:P9I7NzjOlpWqMEDG@cluster0.aknfp4h.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
 
 // Create an instance of Express app
 app = express();
