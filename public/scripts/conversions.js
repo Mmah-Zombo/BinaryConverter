@@ -1,7 +1,7 @@
 let conversion = "";
 
 async function addToHistory(fdata) {
-    await fetch("http://localhost:4000/store", {
+    await fetch("https://binaryconverter.onrender.com/store", {
         method: "POST",
         body: fdata,
         }

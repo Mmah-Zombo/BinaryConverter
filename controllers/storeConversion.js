@@ -8,6 +8,8 @@ module.exports = (req, res) => {
         })
         .then((result) => {
             console.log("sucessfully created");
+            console.log(req.session.userId);
+            
         })
         .catch(err => {
             const validationErrors = Object.keys(err.errors).map(key => err.errors[key].message);
