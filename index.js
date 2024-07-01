@@ -1,6 +1,12 @@
+require('dotenv').config();
 // Import the dependencies
-
 const express = require('express');
+
+
+// Create an instance of Express app
+app = express();
+
+
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const expressSession = require('express-session');
@@ -27,12 +33,17 @@ const sessionSetter = require('./controllers/middlewares/sessionSetter');
 const AuthUser = require('./controllers/middlewares/Auth');
 const redirectIfNotLoggedIn = require('./controllers/middlewares/redirectIfNotLoggedIn');
 
+const port = process.env.PORT || 3000;
+const dbUri = process.env.MONGODB_URI;
+
 // Mongodb Connection
+mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.log(err));
+
 // mongoose.connect('mongodb://localhost:27017/BitConvertPro');
 mongoose.connect('mongodb+srv://NaryZombo:P9I7NzjOlpWqMEDG@cluster0.aknfp4h.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
 
-// Create an instance of Express app
-app = express();
 
 // Register static files
 app.use(express.static('public'));
@@ -81,6 +92,6 @@ app.post('/store', redirectIfNotLoggedIn, storeConversion);
 app.get('/delete/:id', redirectIfNotLoggedIn, deleteHistory);
 app.get('/delete/user/:id', redirectIfNotLoggedIn, deleteUser);
 
-app.listen(4000, () => {
-    console.log('App started at http://localhost:4000');
+app.listen(port, () => {
+    console.log(`App started at http://localhost:${port}`);
 });
