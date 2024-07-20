@@ -4,6 +4,16 @@ This is a binary converter built for a university group project.
 
 ## Starting the App
 
+You can find the deployed application at [BitConvert Pro](https://binaryconverter.onrender.com/).
+
+### System Requirements
+
+To run the cloned source code of this application ensure that you have the following installed on your computer:
+
+- MongoDB server and MongoDB compass
+- NodeJS
+- MySQL
+
 Open your terminal and run:
 
 ``` bash
@@ -32,9 +42,9 @@ This command will only work if you have nodemon installed for the app.
 
 ## Team
 
-M'mah Zomb
-Josephine Magona
-Patrick Kawa
-Mustapha Pabai
-Ina Conteh
+M'mah Zombo <br>
+Josephine Magona <br>
+Patrick Kawa <br>
+Mustapha Pabai <br>
+Ina Conteh <br>
 Jann Lansana
